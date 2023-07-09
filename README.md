@@ -20,6 +20,8 @@ The time taken to compute the missing curvatures (with the function "apol_missin
 * $10^8$: 9.172s
 * $10^9$: 7m 53.859s
 
-Computations to $10^{10}$ typically finish in a few hours, and $10^{11}$ in half a day - several days. Another issue with increasing the bound is memory: up to $10^{11}$ requires around 4GB of memory, and $10^{12}$ is around 30GB. Computations to this range (and higher) would be doable with a large amount of memory (and a lot of time), or by breaking them into sequential computations on the various ranges. This would add quite a lot of computation time, but would require less memory. Since the main algorithm at hand is a depth first search, parallelization would improve timings.
+Computations to $10^{10}$ typically finish in a few hours, and $10^{11}$ in half a day - several days. The first computation to $10^{12}$ (run on the Euclid server at CU Boulder) was for $[-20, 36, 49, 49]$, and this finished in just under 195 hours.
+
+Another issue with increasing the bound is memory: up to $10^{11}$ requires around 4GB of memory, and $10^{12}$ is around 30GB. Computations to this range (and higher) would be doable with a large amount of memory (and a lot of time), or by breaking them into sequential computations on the various ranges. This would add quite a lot of computation time, but would require less memory. Since the main algorithm at hand is a depth first search, parallelization would improve timings.
 
 All computations assume that the curvatures can fit into the C "long" data type. Therefore computations that approach this barrier ($\approx 1.84\cdot 10^{19}$ on a 64-bit machine) are not viable. However, they are unlikely to be viable anyway due to memory and time constraints.
